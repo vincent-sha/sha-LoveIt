@@ -1,1 +1,6 @@
-{{- template "_internal/shortcodes/x.html" . -}}
+{{- $id := .Get 0 -}}
+{{- $user := .Get 1 | default "" -}}
+<blockquote class="twitter-tweet"{{with $user}} data-dnt="true"{{end}}>
+  <a href="https://twitter.com/{{if $user}}{{$user}}{{else}}x{{end}}/status/{{$id}}"></a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

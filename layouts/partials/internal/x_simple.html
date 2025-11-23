@@ -1,1 +1,5 @@
-{{- template "_internal/shortcodes/x_simple.html" . -}}
+{{- $id := .Get 0 -}}
+{{- $user := .Get 1 | default "" -}}
+<blockquote class="twitter-tweet" data-dnt="true">
+  <a href="https://twitter.com/{{if $user}}{{$user}}{{else}}x{{end}}/status/{{$id}}"></a>
+</blockquote>
